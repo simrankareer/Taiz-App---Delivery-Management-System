@@ -1,0 +1,76 @@
+{% extends 'base.html'%}
+{% block title %}About{% endblock title %}Home
+{% block body %} 
+<!--This is About Body block-->
+<title>About Us</title>
+    <style>
+        body {
+            background-color: #E6F7FF; /* Light blue background color */
+            font-family: Arial, sans-serif; /* Choose a suitable font */
+        }
+
+        header {
+            background-color: #008CBA; /* Header background color */
+            color: #FFF; /* Text color for the header */
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2em; /* Adjust the font size as needed */
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFF; /* Content background color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #008CBA; /* Section title color */
+            font-size: 1.5em;
+        }
+
+        p {
+            line-height: 1.6; /* Adjust line spacing as needed */
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0a0a0a; /* Footer background color */
+            color: #FFF; /* Text color for the footer */
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Our Story</h2>
+            <p>We aim to make the day to day deliveries easy for everyone. Covid taught us that the local shops are the best and most relaiable ones and even today we long on our neighbour shops to purchase day-to-day items.
+                Taiz is a one stop solution where you will be able to buy things from your favorite shop at th ease of sitting at home, you will be able to monitor when the order has been assigned for deliery. Your favorite shops will also be not missing on any item in the list as it will be all online. They will update your bill amount. 
+            </p>
+            <p>
+                Just imagine, saving so much paper on creating shopping lists, maintaining bills, calling the shops and asking if your order is out for delivery or not - everything will be tracked online, including the orders placed by you.
+                We at Taiz aim to help our local shopkeepers, their local customers and the deliery agents.
+            </p>
+        </section>
+    
+        <!--section>
+            <h2>Our Team</h2>
+            <p>Introduce the team members or contributors to your website.</p>
+        </section-->
+    </main>
+    <footer>
+        <p>Contact us at <a href="mailto:support@taiz.com">support@taiz.com</a></p>
+    </footer>
+{% endblock body %}

@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% block title %}Contact Us{% endblock title %}
+{% block body %} 
+<!--div class="container-fluid px-0"-->
+<div class="container">
+<h3 class = "text-center">Contact Us</h3> 
+<form method = "POST" action="/contact">
+{% csrf_token %}
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="email" name="email" placeholder = "Enter your email here">
+      
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name= "name" placeholder="Enter your name">
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Contact Number</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder = "Enter your Contact number">
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label">Query</label>
+        <input type="text" class="form-control" id="desc" name ="desc" placeholder = "Specify your query here">
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="Date" class="form-control" id="date">
+      </div>
+    <!--div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div-->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}

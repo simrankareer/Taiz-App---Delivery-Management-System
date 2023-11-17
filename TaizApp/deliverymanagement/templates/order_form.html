@@ -1,0 +1,38 @@
+<!-- order_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Driver and Bill Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e90b0;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #999d9e;
+            border: 1px solid #D1D1D1;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+   
+    <h2>Update Driver and Bill Record</h2>
+    <!-- order_form.html -->
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit Order">
+</form>
+</body>
+</html>

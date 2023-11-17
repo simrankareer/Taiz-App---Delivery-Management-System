@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input[type="checkbox"] {
+            margin: 5px 0;
+        }
+        .product-checkbox {
+            display: flex;
+            align-items: center;
+        }
+        .product-checkbox label {
+            flex: 1;
+            margin-left: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Order</h1>
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="customer">Customer:</label>
+                <select class="form-control" name="customer" id="customer">
+                    {% for customer in customers %}
+                        <option value="{{ customer.id }}">{{ customer.firstname }} {{ customer.lastname }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Products:</label>
+                {% for product in products %}
+                    <div class="product-checkbox">
+                        <input type="checkbox" class="form-check-input" name="products" value="{{ product.id }}" id="product{{ product.id }}">
+                        <label class="form-check-label" for="product{{ product.id }}">{{ product.productname }} - ${{ product.price }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit Order</button>
+        </form>
+    </div>
+</body>
+</html>
